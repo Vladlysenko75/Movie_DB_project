@@ -16,7 +16,7 @@ export const Header = () => {
         dispatch(getMoviesNowPlaying())
     }, [dispatch])
 
-    console.log(moviesArray)
+    // console.log(moviesArray)
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -37,7 +37,7 @@ export const Header = () => {
     return (
         <div className='carousel'>
             <Slider {...settings}>
-                {moviesArray && moviesArray.slice(1,4).map(movie => <Slide key={movie.id} movie={movie}/>)}
+                {moviesArray && moviesArray.slice(4,7).map(movie => <Slide key={movie.id} movie={movie}/>)}
             </Slider>
         </div>
     );

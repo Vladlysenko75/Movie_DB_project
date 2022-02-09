@@ -6,7 +6,8 @@ export const urls = {
     popular: '/popular',
     list: '/list',
     nowPlaying: '/now_playing',
-    key: '?api_key=a7285a18a3f5531cd02d397b99ea983c&page=1'
+    key: '?api_key=a7285a18a3f5531cd02d397b99ea983c&page=1',
+    img1280: 'https://image.tmdb.org/t/p/w1280'
 }
 
 export default basePath;
