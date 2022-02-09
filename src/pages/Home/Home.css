@@ -1,0 +1,8 @@
+.home {
+    margin-top: 25px;
+    display: flex;
+}
+
+.slick-prev:before {
+    display: none;
+}
