@@ -14,11 +14,14 @@ export const Slide = ({movie}) => {
         dispatch(getGenres())
     }, [dispatch])
 
+    // console.log(genres.filter(genre => genre.id === movie.genre_ids[0])[0].name);
+    const filteredGenre = genres.filter(genre => genre.id === movie.genre_ids[0])[0];
+
     return (
         <div style={{backgroundImage: `url(${urls.img1280.concat(backdrop_path)})`}} className={'carouselSlide'}>
             <div className="carouselInfo">
                 <div className="genreBadge">
-                    <p>{genres.filter(genre => genre.id === movie.genre_ids[0])[0].name}</p>
+                    <p>{filteredGenre && filteredGenre.name}</p>
                 </div>
                 <h1>{original_title}</h1>
                 <div className="rating">
