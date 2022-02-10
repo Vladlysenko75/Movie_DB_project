@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    background-color: gainsboro;
+    background-color: #1D1D1D;
+    /*background-color: gainsboro;*/
 }
 
 .App {
