@@ -1,16 +1,16 @@
 .carousel {
-    width: 1300px;
+    width: 1280px;
     background-color: sandybrown;
 }
 
-.carouselSlide {
+.carousel .carouselSlide {
     display: flex;
     align-items: center;
     height: 720px;
     background-color: aqua;
 }
 
-.genreBadge {
+.carousel .genreBadge {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
     border-radius: 0px 8px;
 }
 
-.genreBadge p {
+.carousel .genreBadge p {
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -29,12 +29,12 @@
     color: #0FEFFD;
 }
 
-.carouselInfo {
+.carousel .carouselInfo {
     margin-left: 80px;
     max-width: 650px;
 }
 
-.carouselInfo h1 {
+.carousel .carouselInfo h1 {
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -43,7 +43,7 @@
     color: #FFFFFF;
 }
 
-.carouselInfo .info {
+.carousel .carouselInfo .info {
     max-width: 620px;
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -53,7 +53,7 @@
     color: #FFFFFF;
 }
 
-.carouselBtn {
+.carousel .carouselBtn {
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -65,22 +65,22 @@
 
 }
 
-.slick-dots {
+.carousel .slick-dots {
     margin-top: -70px;
     position: relative;
 }
 
-.slick-next:before {
+.carousel .slick-next:before {
     background: linear-gradient(269.66deg, #1D1D1D 3.45%, rgba(29, 29, 29, 0) 96.65%);
 }
 
-.slick-next {
+.carousel .slick-next {
     width: 315px;
     height: 720px;
     top: 360px;
 }
 
-.carouselInfo button{
+.carousel .carouselInfo button{
     width: 288px;
     height: 56px;
     background: rgba(44, 44, 44, 0.3);
@@ -88,7 +88,7 @@
     border-radius: 40px;
 }
 
-.star-container {
-
+.carousel .slick-list {
+    width: 1280px;
 }
 

@@ -3,6 +3,20 @@
     display: flex;
 }
 
+.morePopular {
+    display: flex;
+    margin-left: 50px;
+}
+
+.morePopular h3 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
 .slick-prev:before {
     display: none;
 }
