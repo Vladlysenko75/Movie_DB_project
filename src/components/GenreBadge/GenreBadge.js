@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const GenreBadge = () => {
+export const GenreBadge = ({genre}) => {
+    const {name} = genre;
+
     return (
-        <div>
-            
+        <div className={'genre'}>
+            <p>{name}</p>
         </div>
     );
 };

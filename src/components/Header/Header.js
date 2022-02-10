@@ -35,7 +35,7 @@ export const Header = () => {
     return (
         <div className='carousel'>
             <Slider {...settings}>
-                {moviesArray && moviesArray.slice(4,8).map(movie => <Slide key={movie.id} movie={movie}/>)}
+                {moviesArray && moviesArray.slice(7,11).map(movie => <Slide key={movie.id} movie={movie}/>)}
             </Slider>
         </div>
     );

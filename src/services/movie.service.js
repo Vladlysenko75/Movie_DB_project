@@ -6,5 +6,5 @@ export const movieService = {
     getMoviesPlayingNow: () => axiosService.get(urls.movie.concat(urls.nowPlaying, urls.key)).then(value => value.data),
     getTopRatedMovies: () => axiosService.get(urls.movie.concat(urls.topRated,urls.key)).then(value => value.data),
     getGenres: () => axiosService.get(urls.genre.concat(urls.movie, urls.list, urls.key)).then(value => value.data),
-    getMovie: (id) => axiosService.get(urls.movie.concat(id, urls.key)).then(value => value.data)
+    getMovie: (id) => axiosService.get(`${urls.movie}/${id}${urls.key}`).then(value => value.data)
 }

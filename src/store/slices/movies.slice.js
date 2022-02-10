@@ -35,12 +35,24 @@ export const getTopRatedMovies = createAsyncThunk(
     }
 )
 
+export const getMovie = createAsyncThunk(
+    'movieSLice/getMovie',
+    async (id, {rejectedWithValue}) => {
+        try {
+            return await movieService.getMovie(id)
+        } catch (e) {
+            rejectedWithValue(e.message)
+        }
+    }
+)
+
 const moviesSlice = createSlice({
     name: 'moviesSlice',
     initialState: {
         popularMovies: [],
         nowPlayingMovies:[],
         topRatedMovies: [],
+        singleMovie: {},
         status: null,
         error: null
     },
@@ -79,6 +91,18 @@ const moviesSlice = createSlice({
             state.topRatedMovies = action.payload;
         },
         [getTopRatedMovies.rejected]: (state, action) => {
+            state.status = 'error';
+            state.error = action.payload;
+        },
+        [getMovie.pending]: (state) => {
+            state.status = 'pending...';
+            state.error = null;
+        },
+        [getMovie.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.singleMovie = action.payload;
+        },
+        [getMovie.rejected]: (state, action) => {
             state.status = 'error';
             state.error = action.payload;
         }

@@ -33,8 +33,6 @@ export const TopRated = () => {
         nextArrow: <SampleNextArrow/>
     };
 
-    console.log(moviesArray)
-
     return (
         <div className={'carousel3'}>
             <Slider {...settings}>

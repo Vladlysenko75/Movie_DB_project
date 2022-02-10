@@ -4,6 +4,7 @@ import StarRatings from "react-star-ratings";
 import {urls} from '../../constants'
 import {useDispatch, useSelector} from "react-redux";
 import {getGenres} from "../../store/slices";
+import {Link} from "react-router-dom";
 
 export const Slide = ({movie}) => {
     const {original_title, overview, id, vote_average, backdrop_path} = movie;
@@ -34,7 +35,9 @@ export const Slide = ({movie}) => {
                     />
                 </div>
                 <p className='info'>{overview}</p>
-                <button className={'carouselBtn'}>More Details</button>
+                <Link to={`/movie/${id}`}>
+                    <button className={'carouselBtn'}>More Details</button>
+                </Link>
             </div>
         </div>
     );
