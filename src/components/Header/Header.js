@@ -8,15 +8,13 @@ import scrollRight from '../../img/scrollRight.svg';
 import {Slide} from "./Slide";
 
 export const Header = () => {
-    const {movies} = useSelector(state => state['moviesReducer']);
-    const moviesArray = movies.results;
+    const {nowPlayingMovies} = useSelector(state => state['moviesReducer']);
+    const moviesArray = nowPlayingMovies.results;
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getMoviesNowPlaying())
     }, [dispatch])
-
-    // console.log(moviesArray)
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;

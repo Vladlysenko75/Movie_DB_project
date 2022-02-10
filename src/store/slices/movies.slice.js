@@ -24,10 +24,23 @@ export const getMoviesNowPlaying = createAsyncThunk(
     }
 )
 
+export const getTopRatedMovies = createAsyncThunk(
+    'movieSlice/getTopRatedMovies',
+    async (_, {rejectedWithValue}) => {
+        try {
+            return await movieService.getTopRatedMovies()
+        } catch (e) {
+            rejectedWithValue(e.message)
+        }
+    }
+)
+
 const moviesSlice = createSlice({
     name: 'moviesSlice',
     initialState: {
-        movies: [],
+        popularMovies: [],
+        nowPlayingMovies:[],
+        topRatedMovies: [],
         status: null,
         error: null
     },
@@ -39,7 +52,7 @@ const moviesSlice = createSlice({
         },
         [getPopularMovies.fulfilled]: (state, action) => {
             state.status = 'fulfilled';
-            state.movies = action.payload;
+            state.popularMovies = action.payload;
         },
         [getPopularMovies.rejected]: (state, action) => {
             state.status = 'error';
@@ -51,9 +64,21 @@ const moviesSlice = createSlice({
         },
         [getMoviesNowPlaying.fulfilled]: (state, action) => {
             state.status = 'fulfilled';
-            state.movies = action.payload;
+            state.nowPlayingMovies = action.payload;
         },
         [getMoviesNowPlaying.rejected]: (state, action) => {
+            state.status = 'error';
+            state.error = action.payload;
+        },
+        [getTopRatedMovies.pending]: (state) => {
+            state.status = 'pending...';
+            state.error = null;
+        },
+        [getTopRatedMovies.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.topRatedMovies = action.payload;
+        },
+        [getTopRatedMovies.rejected]: (state, action) => {
             state.status = 'error';
             state.error = action.payload;
         }

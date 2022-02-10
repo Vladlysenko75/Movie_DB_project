@@ -15,7 +15,6 @@ export const Slide = ({movie}) => {
     }, [dispatch])
 
     const filteredGenre = genres.filter(genre => genre.id === movie.genre_ids[0])[0];
-    // console.log(genres.filter(genre => genre.id === movie.genre_ids[0])[0].name);
 
     return (
         <div style={{backgroundImage: `url(${urls.img1280.concat(backdrop_path)})`}} className={'carouselSlide'}>

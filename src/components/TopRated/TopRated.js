@@ -1,21 +1,20 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+
+import {getTopRatedMovies} from "../../store/slices";
 import Slider from "react-slick";
-
-import {getPopularMovies} from "../../store/slices";
-import {MovieListCard} from "./MovieListCard";
-import './MovieList.css';
 import scrollRight from "../../img/scrollRight.svg";
+import {TopRatedMovie} from "./TopRatedMovie";
+import './Top Rated.css';
 
-export const MoviesList = () => {
-    const {popularMovies} = useSelector(state => state['moviesReducer']);
-    const moviesArray = popularMovies.results;
+export const TopRated = () => {
+    const {topRatedMovies} = useSelector(state => state['moviesReducer']);
+    const moviesArray = topRatedMovies.results;
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getPopularMovies())
+        dispatch(getTopRatedMovies())
     }, [dispatch])
-
 
     function SampleNextArrow(props) {
         const {className, style, onClick} = props;
@@ -28,19 +27,19 @@ export const MoviesList = () => {
         className: "",
         dots: true,
         infinite: true,
-        slidesToShow: 6,
+        slidesToShow: 4,
         slidesToScroll: 1,
         adaptiveHeight: true,
         nextArrow: <SampleNextArrow/>
     };
 
+    console.log(moviesArray)
+
     return (
-        <div>
-            <div className='carousel2'>
-                <Slider {...settings}>
-                    {moviesArray && moviesArray.slice(1, 12).map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
-                </Slider>
-            </div>
+        <div className={'carousel3'}>
+            <Slider {...settings}>
+                {moviesArray && moviesArray.slice(1, 8).map(movie => <TopRatedMovie key={movie.id} movie={movie}/>)}
+            </Slider>
         </div>
     );
 };

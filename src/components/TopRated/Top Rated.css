@@ -1,0 +1,28 @@
+.carousel3 {
+    margin-left: 50px;
+    width: 1280px;
+    height: 513px;
+}
+
+.carousel3 .slick-list {
+    width: 1280px;
+    height: 513px;
+    margin-right: -30px;
+}
+
+.carousel3 .slick-track {
+    top: -21px;
+}
+
+.carousel3 .slick-next {
+    right: -9px;
+    top: 229px;
+    height: 461px;
+    width: 185px;
+}
+
+.carousel3 .movieInfo {
+    height: 480px;
+    width: 320px;
+    background-size: contain;
+}

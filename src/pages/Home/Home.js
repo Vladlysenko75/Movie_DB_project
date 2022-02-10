@@ -5,6 +5,7 @@ import './Home.css';
 import {NavBar} from "../../components/NavBar/NavBar";
 import {MoviesList} from "../../components/MoviesList/MoviesList";
 import chevronRight from "../../img/chevronRight.svg"
+import {TopRated} from "../../components/TopRated/TopRated";
 
 export const Home = () => {
     return (
@@ -19,6 +20,13 @@ export const Home = () => {
                     <img src={chevronRight} alt="Arrow right"/>
                 </div>
                 <MoviesList/>
+            </div>
+            <div className="popular">
+                <div className="morePopular">
+                    <h3>Top Rated</h3>
+                    <img src={chevronRight} alt="Arrow right"/>
+                </div>
+                <TopRated/>
             </div>
         </div>
     );
