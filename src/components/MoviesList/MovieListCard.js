@@ -7,10 +7,10 @@ import {urls} from "../../constants";
 import "./MovieListCard.css";
 
 export const MovieListCard = ({movie}) => {
-    const filteredGenre = genres.filter(genre => genre.id === genre_ids[0])[0];
-    const {genres} = useSelector(state => state['genresReducer']);
-    const background = `url(${urls.img185.concat(poster_path)})`;
     const {vote_average, poster_path, id, genre_ids} = movie;
+    const {genres} = useSelector(state => state['genresReducer']);
+    const filteredGenre = genres.filter(genre => genre.id === genre_ids[0])[0];
+    const background = `url(${urls.img185.concat(poster_path)})`;
 
     return (
         <div  className='movie'>
