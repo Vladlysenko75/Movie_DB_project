@@ -27,7 +27,6 @@ export const MovieInfo = () => {
         vote_count,
         tagline,
         status,
-        homepage,
         genres,
         backdrop_path,
         production_companies,
@@ -49,7 +48,6 @@ export const MovieInfo = () => {
                     <div className="posterGenres">
                         {genres && genres.map(genre => <GenreBadge key={genre.id} genre={genre}/>)}
                     </div>
-                    {homepage && <h4>Homepage: <a href={homepage}>{homepage}</a></h4>}
                 </div>
                 <div className="details">
                     <div className="titleBadge">
@@ -72,7 +70,7 @@ export const MovieInfo = () => {
                         <p>({vote_count})</p>
                     </div>
                     <h3>{overview}</h3>
-                    {budget && <div className="money">
+                    {budget>1 && <div className="money">
                         <h4>Status: {status}</h4>
                         <h4>Budget: {budget} $</h4>
                         <h4>Revenue: {revenue} $</h4>
@@ -80,7 +78,7 @@ export const MovieInfo = () => {
                     <div className="productionCompanies">
                         <h3>Production Companies:</h3>
                         <div className="production">
-                            {production_companies && production_companies.map(company => <ProductionCompanies
+                            {production_companies && production_companies.slice(0,3).map(company => <ProductionCompanies
                                 key={company.id} company={company}/>)}
                         </div>
                     </div>

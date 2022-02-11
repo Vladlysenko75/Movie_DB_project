@@ -14,7 +14,9 @@ export const NavBar = () => {
             <NavLink to={'/'}>
                 <img src={home} alt="home"/>
             </NavLink>
-            <img src={movie} alt="movie"/>
+            <NavLink to={'/genres'}>
+                <img src={movie} alt="genres"/>
+            </NavLink>
             <img src={favourite} alt="favourite"/>
         </div>
     );

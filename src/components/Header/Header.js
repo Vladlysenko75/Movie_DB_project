@@ -6,6 +6,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {getMoviesNowPlaying} from "../../store/slices";
 import scrollRight from '../../img/scrollRight.svg';
 import {Slide} from "./Slide";
+import chevronRight from "../../img/chevronRight.svg";
+import {MoviesList} from "../MoviesList/MoviesList";
+import {TopRated} from "../TopRated/TopRated";
 
 export const Header = () => {
     const {nowPlayingMovies} = useSelector(state => state['moviesReducer']);
@@ -33,10 +36,26 @@ export const Header = () => {
     };
 
     return (
-        <div className='carousel'>
-            <Slider {...settings}>
-                {moviesArray && moviesArray.slice(7,11).map(movie => <Slide key={movie.id} movie={movie}/>)}
-            </Slider>
+        <div>
+            <div className="carousel">
+                <Slider {...settings}>
+                    {moviesArray && moviesArray.slice(9,13).map(movie => <Slide key={movie.id} movie={movie}/>)}
+                </Slider>
+            </div>
+            <div className={'popular'}>
+                <div className="morePopular">
+                    <h3>Popular</h3>
+                    <img src={chevronRight} alt="Arrow right"/>
+                </div>
+                <MoviesList/>
+            </div>
+            <div className="popular">
+                <div className="morePopular">
+                    <h3>Top Rated</h3>
+                    <img src={chevronRight} alt="Arrow right"/>
+                </div>
+                <TopRated/>
+            </div>
         </div>
     );
 };

@@ -7,6 +7,8 @@ export const urls = {
     list: '/list',
     nowPlaying: '/now_playing',
     topRated: '/top_rated',
+    discover: '/discover',
+    certainGenre: '&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=',
     key: '?api_key=a7285a18a3f5531cd02d397b99ea983c&page=1',
     img92: 'https://image.tmdb.org/t/p/w92',
     img185: 'https://image.tmdb.org/t/p/w185',

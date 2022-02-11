@@ -12,10 +12,22 @@ export const getGenres = createAsyncThunk(
     }
 )
 
+export const getGenreList = createAsyncThunk(
+    'genreSlice/getGenreList',
+    async (id, {rejectWithValue}) => {
+        try {
+            return await genreService.genreList(id)
+        } catch (e) {
+            rejectWithValue(e.message)
+        }
+    }
+)
+
 const genresSlice = createSlice({
     name: 'genresSlice',
     initialState: {
         genres: [],
+        genreList: [],
         status: null,
         error: null
     },
@@ -30,6 +42,18 @@ const genresSlice = createSlice({
             state.genres = action.payload.genres;
         },
         [getGenres.rejected]: (state, action) => {
+            state.status = 'error';
+            state.error = action.payload;
+        },
+        [getGenreList.pending]: (state) => {
+            state.status = 'pending...';
+            state.error = null;
+        },
+        [getGenreList.fulfilled]: (state, action) => {
+            state.status = 'fulfilled';
+            state.genreList = action.payload.results;
+        },
+        [getGenreList.rejected]: (state, action) => {
             state.status = 'error';
             state.error = action.payload;
         }
