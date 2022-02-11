@@ -5,8 +5,16 @@ import genresReducer from "./slices/genres.slice";
 
 const rootReducer = combineReducers({moviesReducer, genresReducer})
 
+
 const store = configureStore({
-    reducer: rootReducer
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => [
+        ...getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: ['genreSlice/getGenreList/fulfilled']
+            },
+        })
+    ]
 })
 
 export default store;

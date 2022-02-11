@@ -1,21 +1,15 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import StarRatings from "react-star-ratings";
+import {useSelector} from "react-redux";
 
-import {urls} from '../../constants'
-import {useDispatch, useSelector} from "react-redux";
-import {getGenres} from "../../store/slices";
 import {Link} from "react-router-dom";
+import {urls} from '../../constants'
 
 export const Slide = ({movie}) => {
     const {original_title, overview, id, vote_average, backdrop_path} = movie;
     const {genres} = useSelector(state => state['genresReducer']);
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getGenres())
-    }, [dispatch])
-
-    const filteredGenre = genres.filter(genre => genre.id === movie.genre_ids[0])[0];
+    const filteredGenre = genres.find(genre => genre.id === movie.genre_ids[0]);
 
     return (
         <div style={{backgroundImage: `url(${urls.img1280.concat(backdrop_path)})`}} className={'carouselSlide'}>

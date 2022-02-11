@@ -8,6 +8,17 @@ import movie from '../../img/Movie.svg';
 import {NavLink} from "react-router-dom";
 
 export const NavBar = () => {
+
+    const switchTheme = () => {
+        const body = document.getElementsByTagName("body")[0];
+        if (!body.className) {
+            body.classList.add('switcher')
+        } else {
+            body.classList.remove('switcher')
+        }
+    }
+
+
     return (
         <div className='navBar'>
             <img src={logo} alt="logo"/>
@@ -18,6 +29,7 @@ export const NavBar = () => {
                 <img src={movie} alt="genres"/>
             </NavLink>
             <img src={favourite} alt="favourite"/>
+            <button onClick={switchTheme}>change</button>
         </div>
     );
 };

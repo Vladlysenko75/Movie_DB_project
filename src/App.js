@@ -7,8 +7,10 @@ import {Home} from "./pages/Home/Home";
 import {Header} from "./components/Header/Header";
 import {MovieInfo} from "./components/MovieInfo/MovieInfo";
 import {Genres} from "./components/Genres/Genres";
+import {GenreList} from "./components/Genres/GenreList/GenreList";
 
 function App() {
+
     return (
         <div className="App">
             <Routes>
@@ -16,8 +18,7 @@ function App() {
                     <Route index element={<Header/>}/>
                     <Route path={'movie/:id'} element={<MovieInfo/>}/>
                     <Route path={'genres'} element={<Genres/>}/>
-                        <Route path={':id'}/>
-                    <Route/>
+                    <Route path={':genre/:id'} element={<GenreList/>}/>
                 </Route>
             </Routes>
         </div>

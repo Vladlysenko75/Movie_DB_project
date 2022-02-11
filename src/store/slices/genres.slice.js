@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {genreService} from "../../services/genres.service";
 
 export const getGenres = createAsyncThunk(
@@ -14,9 +15,10 @@ export const getGenres = createAsyncThunk(
 
 export const getGenreList = createAsyncThunk(
     'genreSlice/getGenreList',
-    async (id, {rejectWithValue}) => {
+    async ({id,page}, {rejectWithValue}) => {
         try {
-            return await genreService.genreList(id)
+            console.log(id)
+            return await genreService.genreList(id, page)
         } catch (e) {
             rejectWithValue(e.message)
         }
@@ -51,7 +53,7 @@ const genresSlice = createSlice({
         },
         [getGenreList.fulfilled]: (state, action) => {
             state.status = 'fulfilled';
-            state.genreList = action.payload.results;
+            state.genreList = action.payload.data;
         },
         [getGenreList.rejected]: (state, action) => {
             state.status = 'error';

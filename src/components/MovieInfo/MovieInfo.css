@@ -74,6 +74,10 @@
     gap: 13px;
 }
 
+.posterGenres a {
+    text-decoration: none;
+}
+
 .genre {
     display: flex;
     justify-content: center;

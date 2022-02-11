@@ -4,6 +4,10 @@ body {
     /*background-color: gainsboro;*/
 }
 
+.switcher {
+    background-color: #c1c1c1;
+}
+
 .App {
     display: flex;
     justify-content: center;

@@ -1,0 +1,57 @@
+.certainGenre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1280px;
+    height: 720px;
+    background-color: #FFFFFF;
+}
+
+.certainGenre h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+    color: rgba(29, 29, 29, 0.5);
+}
+
+.genreList {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.movieInfo {
+    width: 185px;
+    height: 270px;
+    border-radius: 12px;
+}
+
+.genreButtons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.genreButtons button {
+    width: 185px;
+    height: 56px;
+    background: #E10856;
+    box-shadow: 0px 16px 16px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 40px;
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 40px 40px rgba(0, 0, 0, 0.12);
+}
+
