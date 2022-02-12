@@ -8,6 +8,7 @@ import {Header} from "./components/Header/Header";
 import {MovieInfo} from "./components/MovieInfo/MovieInfo";
 import {Genres} from "./components/Genres/Genres";
 import {GenreList} from "./components/Genres/GenreList/GenreList";
+import {Search} from "./components/Search/Search";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
                     <Route path={'movie/:id'} element={<MovieInfo/>}/>
                     <Route path={'genres'} element={<Genres/>}/>
                     <Route path={':genre/:id'} element={<GenreList/>}/>
+                    <Route path={'search'} element={<Search/>}/>
                 </Route>
             </Routes>
         </div>
