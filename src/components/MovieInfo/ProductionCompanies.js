@@ -3,6 +3,7 @@ import {urls} from "../../constants";
 
 export const ProductionCompanies = ({company}) => {
     const {logo_path, name} = company;
+
     return (
         <div className={'company'}>
             <p>{name}</p>

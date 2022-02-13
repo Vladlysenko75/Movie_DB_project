@@ -13,8 +13,8 @@ export const MovieListCard = ({movie}) => {
     const background = `url(${urls.img185.concat(poster_path)})`;
 
     return (
-        <div  className='movie'>
-            <Link to={`/movie/${id}`} style={{ textDecoration: 'none' }}>
+        <div className='movie'>
+            <Link to={`/movie/${id}`} style={{textDecoration: 'none'}}>
                 <div style={{backgroundImage: background}} className="movieInfo">
                     <div className="info">
                         <div className="genreBadge">
@@ -22,7 +22,7 @@ export const MovieListCard = ({movie}) => {
                         </div>
                         <div className="popularRating">
                             <p>{vote_average}</p>
-                            <img src={rating}  alt="rating"/>
+                            <img src={rating} alt="rating"/>
                         </div>
                     </div>
                 </div>

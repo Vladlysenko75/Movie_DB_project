@@ -1,0 +1,14 @@
+.userInfo {
+    height: 100px;
+    width: 1280px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: -100px;
+    position: relative;
+    z-index: 1;
+}
+
+.userInfo img {
+    margin-right: 80px;
+}

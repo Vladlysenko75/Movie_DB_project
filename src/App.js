@@ -1,14 +1,14 @@
 import {Routes, Route} from "react-router-dom";
 
-import './App.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import {Home} from "./pages/Home/Home";
-import {Header} from "./components/Header/Header";
-import {MovieInfo} from "./components/MovieInfo/MovieInfo";
-import {Genres} from "./components/Genres/Genres";
 import {GenreList} from "./components/Genres/GenreList/GenreList";
+import {MovieInfo} from "./components/MovieInfo/MovieInfo";
 import {Search} from "./components/Search/Search";
+import {Header} from "./components/Header/Header";
+import {Genres} from "./components/Genres/Genres";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import {Home} from "./pages/Home/Home";
+import './App.css';
 
 function App() {
 

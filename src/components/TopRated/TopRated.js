@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
 import {getTopRatedMovies} from "../../store/slices";
-import Slider from "react-slick";
 import scrollRight from "../../img/scrollRight.svg";
 import {TopRatedMovie} from "./TopRatedMovie";
+import Slider from "react-slick";
 import './Top Rated.css';
 
 export const TopRated = () => {

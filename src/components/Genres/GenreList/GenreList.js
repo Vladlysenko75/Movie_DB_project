@@ -13,7 +13,6 @@ export const GenreList = () => {
     const {id, genre} = useParams();
     const dispatch = useDispatch();
 
-
     const pageForward = (pagenumber) => {
         if (pagenumber < 500) {
             setPage(pagenumber + 1);
@@ -23,19 +22,12 @@ export const GenreList = () => {
     const pageBackward = (pagenumber) => {
         if (pagenumber <= 1) {
             setPage(500)
-        }
-        else setPage(pagenumber - 1)
+        } else setPage(pagenumber - 1)
     }
-
-    console.log(page)
 
     useEffect(() => {
         dispatch(getGenreList({id, page}))
     }, [dispatch, id, page])
-
-    console.log(genreList)
-
-
 
     return (
         <div className={'certainGenre'}>

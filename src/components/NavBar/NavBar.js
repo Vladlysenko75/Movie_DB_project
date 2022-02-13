@@ -1,6 +1,5 @@
 import React from 'react';
 
-import favourite from '../../img/favourite.svg';
 import search from '../../img/search.svg';
 import {NavLink} from "react-router-dom";
 import movie from '../../img/Movie.svg';
@@ -31,7 +30,6 @@ export const NavBar = () => {
             <NavLink to={'/search'}>
                 <img className='search' src={search} alt="favourite"/>
             </NavLink>
-            {/*<img src={favourite} alt="favourite"/>*/}
             <div className="theme">
                 <input type="checkbox" className='toggle-switch' onClick={switchTheme}/>
             </div>

@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
 import Slider from "react-slick";
+import {useDispatch, useSelector} from "react-redux";
 
 import {getPopularMovies} from "../../store/slices";
+import scrollRight from "../../img/scrollRight.svg";
 import {MovieListCard} from "./MovieListCard";
 import './MovieList.css';
-import scrollRight from "../../img/scrollRight.svg";
 
 export const MoviesList = () => {
     const {popularMovies} = useSelector(state => state['moviesReducer']);
@@ -15,7 +15,6 @@ export const MoviesList = () => {
     useEffect(() => {
         dispatch(getPopularMovies())
     }, [dispatch])
-
 
     function SampleNextArrow(props) {
         const {className, style, onClick} = props;
@@ -38,7 +37,8 @@ export const MoviesList = () => {
         <div>
             <div className='carousel2'>
                 <Slider {...settings}>
-                    {moviesArray && moviesArray.slice(1, 12).map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
+                    {moviesArray && moviesArray.slice(1, 12).map(movie => <MovieListCard key={movie.id}
+                                                                                         movie={movie}/>)}
                 </Slider>
             </div>
         </div>

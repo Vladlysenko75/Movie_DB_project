@@ -1,9 +1,9 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 
-import {urls} from "../../constants";
 import rating from "../../img/rating.svg";
 import {Link} from "react-router-dom";
+import {urls} from "../../constants";
 
 export const TopRatedMovie = ({movie}) => {
     const {vote_average, poster_path, id, genre_ids} = movie;
@@ -12,7 +12,7 @@ export const TopRatedMovie = ({movie}) => {
 
     return (
         <div>
-            <Link to={`/movie/${id}`} style={{ textDecoration: 'none' }}>
+            <Link to={`/movie/${id}`} style={{textDecoration: 'none'}}>
                 <div style={{backgroundImage: `url(${urls.img342.concat(poster_path)})`}} className="movieInfo">
                     <div className="info">
                         <div className="genreBadge">
@@ -20,7 +20,7 @@ export const TopRatedMovie = ({movie}) => {
                         </div>
                         <div className="popularRating">
                             <p>{vote_average}</p>
-                            <img src={rating}  alt="rating"/>
+                            <img src={rating} alt="rating"/>
                         </div>
                     </div>
                 </div>

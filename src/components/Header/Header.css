@@ -1,14 +1,12 @@
 .carousel {
     width: 1280px;
     height: 720px;
-    background-color: sandybrown;
 }
 
 .carousel .carouselSlide {
     display: flex;
     align-items: center;
     height: 720px;
-    background-color: aqua;
 }
 
 .carousel .genreBadge {
@@ -92,4 +90,3 @@
 .carousel .slick-list {
     width: 1280px;
 }
-

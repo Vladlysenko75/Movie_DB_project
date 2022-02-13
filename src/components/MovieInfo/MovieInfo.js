@@ -1,18 +1,18 @@
 import React, {useEffect} from 'react';
-import StarRatings from "react-star-ratings";
 import {useParams} from "react-router-dom";
+import StarRatings from "react-star-ratings";
 import {useDispatch, useSelector} from "react-redux";
 
-import './MovieInfo.css';
-import {getMovie} from "../../store/slices";
-import {urls} from "../../constants";
-import imdb from "../../img/imdb.png";
-import {GenreBadge} from "../GenreBadge/GenreBadge";
 import {ProductionCompanies} from "./ProductionCompanies";
+import {GenreBadge} from "../GenreBadge/GenreBadge";
+import {getMovie} from "../../store/slices";
+import imdb from "../../img/imdb.png";
+import {urls} from "../../constants";
+import './MovieInfo.css';
 
 export const MovieInfo = () => {
-    const {id} = useParams();
     const {singleMovie} = useSelector(state => state['moviesReducer']);
+    const {id} = useParams();
 
     const dispatch = useDispatch();
     const {
@@ -30,15 +30,11 @@ export const MovieInfo = () => {
         genres,
         backdrop_path,
         production_companies,
-        belongs_to_collection
     } = singleMovie;
-
 
     useEffect(() => {
         dispatch(getMovie(id))
     }, [dispatch, id])
-
-    console.log(singleMovie);
 
     return (
         <div style={{backgroundImage: `url(${urls.img1280.concat(backdrop_path)})`}} className='movieInformation'>
@@ -70,7 +66,7 @@ export const MovieInfo = () => {
                         <p>({vote_count})</p>
                     </div>
                     <h3>{overview}</h3>
-                    {budget>1 && <div className="money">
+                    {budget > 1 && <div className="money">
                         <h4>Status: {status}</h4>
                         <h4>Budget: {budget} $</h4>
                         <h4>Revenue: {revenue} $</h4>
@@ -78,8 +74,9 @@ export const MovieInfo = () => {
                     <div className="productionCompanies">
                         <h3>Production Companies:</h3>
                         <div className="production">
-                            {production_companies && production_companies.slice(0,3).map(company => <ProductionCompanies
-                                key={company.id} company={company}/>)}
+                            {production_companies && production_companies.slice(0, 3).map(company =>
+                                <ProductionCompanies
+                                    key={company.id} company={company}/>)}
                         </div>
                     </div>
                 </div>

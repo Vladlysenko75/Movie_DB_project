@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
 import Slider from "react-slick";
 
-import './Header.css';
-import {useDispatch, useSelector} from "react-redux";
 import {getMoviesNowPlaying} from "../../store/slices";
-import scrollRight from '../../img/scrollRight.svg';
-import {Slide} from "./Slide";
 import chevronRight from "../../img/chevronRight.svg";
+import {useDispatch, useSelector} from "react-redux";
 import {MoviesList} from "../MoviesList/MoviesList";
+import scrollRight from '../../img/scrollRight.svg';
+import {UserInfo} from "../UserInfo/UserInfo";
 import {TopRated} from "../TopRated/TopRated";
+import {Slide} from "./Slide";
+import './Header.css';
 
 export const Header = () => {
     const {nowPlayingMovies} = useSelector(state => state['moviesReducer']);
@@ -20,7 +21,7 @@ export const Header = () => {
     }, [dispatch])
 
     function SampleNextArrow(props) {
-        const { className, style, onClick } = props;
+        const {className, style, onClick} = props;
         return (
             <img className={className} style={style} onClick={onClick} src={scrollRight} alt="scroll Right"/>
         );
@@ -34,15 +35,16 @@ export const Header = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 6000,
-        nextArrow: <SampleNextArrow />
+        nextArrow: <SampleNextArrow/>
 
     };
 
     return (
         <div>
+            <UserInfo/>
             <div className="carousel">
                 <Slider {...settings}>
-                    {moviesArray && moviesArray.slice(9,13).map(movie => <Slide key={movie.id} movie={movie}/>)}
+                    {moviesArray && moviesArray.slice(9, 13).map(movie => <Slide key={movie.id} movie={movie}/>)}
                 </Slider>
             </div>
             <div className={'popular'}>

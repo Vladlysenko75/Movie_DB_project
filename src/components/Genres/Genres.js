@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import './Genres.css';
-import {getGenres} from "../../store/slices";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
+import {getGenres} from "../../store/slices";
+import './Genres.css';
 
 export const Genres = () => {
     const {genres} = useSelector(state => state['genresReducer']);
@@ -12,9 +12,6 @@ export const Genres = () => {
     useEffect(() => {
         dispatch(getGenres())
     }, [dispatch])
-
-
-    console.log(genres);
 
     return (
         <div className={'genres'}>

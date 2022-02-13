@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 
-import './Search.css';
-import searchButton from '../../img/search.svg'
-import {useForm} from "react-hook-form";
+import {MovieListCard} from "../MoviesList/MovieListCard";
 import {useDispatch, useSelector} from "react-redux";
 import {searchMovie} from "../../store/slices";
-import {MovieListCard} from "../MoviesList/MovieListCard";
+import searchButton from '../../img/search.svg';
+import {useForm} from "react-hook-form";
+import './Search.css';
 
 export const Search = () => {
     const [page, setPage] = useState(1);
@@ -38,10 +38,6 @@ export const Search = () => {
             setPage(total_pages)
         } else setPage(pagenumber - 1)
     }
-
-    console.log(results)
-    console.log(page);
-    console.log(searchMovies);
 
     return (
         <div className={'searchPage'}>
